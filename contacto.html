@@ -7,7 +7,6 @@
     <meta name="description" content="Contáctanos para más información sobre el Modelo Dual Alemán, programas, admisiones y alianzas en CEVAC.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
 </head>
 <body>
 
@@ -100,13 +99,13 @@
                 
                 <div class="contact-form-section">
                     <h3 class="section-subtitle" style="color: #ff0000;">Envíanos un Mensaje Directo</h3>
-                  <form name="contacto-final" method="POST" data-netlify="true" action="/gracias.html" class="contact-form">
-    
-    <input type="hidden" name="form-name" value="contacto-final" />
+                    
+                    <form action="https://formspree.io/f/mrbrervg" method="POST" class="contact-form">
+                        
+                        <input type="hidden" name="_next" value="https://jeancarlosalcala2005-ops.github.io/CEVAC/gracias.html" /> 
+                        
+                        <input type="text" name="_gotcha" style="display:none" />
 
-    <input type="hidden" name="_next" value="/gracias.html" /> 
-    
-    
                         <div class="form-group">
                             <label for="nombre">Nombre Completo <span style="color: #ff0000;">*</span></label>
                             <input type="text" id="nombre" name="Nombre" required>
@@ -143,10 +142,6 @@
             </div>
         </section>
         
-        <form name="contacto-final" netlify hidden>
-          <input type="text" name="name" />
-        </form>
-
     </main>
 
 
