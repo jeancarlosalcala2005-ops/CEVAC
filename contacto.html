@@ -102,8 +102,7 @@
                     
                     <form action="https://api.staticforms.xyz/submit" method="POST" class="contact-form">
                         
-                        <input type="hidden" name="accessKey" value="sf_80cif925n346n6c1jgd264g5" />
-                        
+                        <input type="hidden" name="accessKey" value="sf_80cif925n346n6c1jgd264g5" /> 
                         <input type="hidden" name="redirectTo" value="https://jeancarlosalcala2005-ops.github.io/CEVAC/gracias.html" /> 
                         <input type="hidden" name="redirectToOnError" value="https://jeancarlosalcala2005-ops.github.io/CEVAC/error.html" />
                         <input type="hidden" name="subject" value="Mensaje de Contacto - Sitio Web CEVAC" />
@@ -120,14 +119,31 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="ci">Cédula de Identidad (CI) <span style="color: #ff0000;">*</span></label>
+                            <input type="text" id="ci" name="CI" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Número de Teléfono <span style="color: #ff0000;">*</span></label>
+                            <input type="tel" id="telefono" name="Teléfono" required>
+                        </div>
+
+                        <div class="form-group">
                             <label for="asunto">Asunto <span style="color: #ff0000;">*</span></label>
                             <select id="asunto" name="Asunto" required>
                                 <option value="">Seleccione el motivo de su consulta...</option>
-                                <option value="Admisiones">Consulta sobre Admisiones/Inscripción</option>
+                                <option value="Admisiones_Con_Documentos">Admisiones e Inscripción (Con Documentos)</option>
                                 <option value="Programas">Información de un Programa Específico</option>
                                 <option value="Alianzas">Propuesta de Alianza Empresarial</option>
                                 <option value="General">Consulta General</option>
                             </select>
+                        </div>
+
+                        <div class="form-group" style="background-color: #fffacd; padding: 15px; border-radius: 5px; border-left: 5px solid #ffce00;">
+                            <label style="color: #000; font-weight: bold;"><i class="fas fa-exclamation-triangle"></i> Notas Certificadas</label>
+                            <p style="margin-top: 5px; font-size: 0.95rem; margin-bottom: 0;">
+                                Por favor, envíe sus **Notas Certificadas** directamente a nuestro correo: **admisiones@cevac.org** después de enviar este formulario.
+                            </p>
                         </div>
 
                         <div class="form-group">
@@ -140,9 +156,8 @@
                         </button>
                     <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">* Campos requeridos *</p>
                     </form>
-
                 </div>
-            </div>
+                </div>
         </section>
         
     </main>
@@ -155,9 +170,8 @@
         </p>
     </footer>
 
-    <a href="admisiones.html" class="sticky-cta-btn">
-        <i class="fas fa-user-plus"></i> ¡Postúlate Hoy!
-    </a>
+   
     <script src="scripts.js"></script>
+    
 </body>
 </html>
