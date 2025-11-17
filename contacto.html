@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | CEVAC - Centro Venezolano Alemán de Capacitación</title>
+    <meta name="description" content="Contáctanos para más información sobre el Modelo Dual Alemán, programas, admisiones y alianzas en CEVAC.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/descarga.png" alt="Logo CEVAC" class="logo-img"> 
+                <div>
+                    <span class="logo-text">CEVAC</span><br/>
+                    <span class="logo-subtext">Centro Venezolano-Alemán de Capacitación</span>
+                </div>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="programas.html">Programas</a></li>
+                    <li><a href="admisiones.html">Admisiones</a></li>
+                    <li><a href="alianzas.html">Alianzas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div style="height: 80px;"></div> 
+
+        <section class="about">
+            <h2 class="section-title">Hablemos de tu Futuro</h2>
+            <p class="section-subtitle">Estamos listos para responder tus preguntas.</p>
+            
+            <div class="contact-grid">
+                
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <div>
+                            <strong>Ubicación:</strong>
+                            <p>Av. Nte. 11, Caracas 1011, Distrito Capital, Venezuela.</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div>
+                            <strong>Teléfono:</strong>
+                            <p>+58 212-5780823</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div>
+                            <strong>Correo Electrónico:</strong>
+                            <p>admisiones@cevac.org</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock contact-icon"></i>
+                        <div>
+                            <strong>Horario de Atención:</strong>
+                            <p>Lunes a Viernes: 8:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+
+                    <hr style="margin-top: 1rem; border-color: #ddd;">
+                    <p style="font-size: 0.9rem; margin-top: 1rem;">**Nota:** Las visitas deben ser previamente agendadas.</p>
+                </div>
+
+                <div class="contact-info" style="padding: 2rem;">
+                    <h3>Ubicación Detallada</h3>
+                    <p style="margin-bottom: 10px;">Encuéntranos en Google Maps.</p>
+                    <iframe 
+                        src="https://maps.google.com/maps?width=100%25&height=600&hl=es&q=Centro%20Venezolano%20Aleman%20de%20Capacitacion%20CEVAC&t=&z=17&ie=UTF8&iwloc=B&output=embed"
+                        width="100%" 
+                        height="350" 
+                        style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <div class="contact-form-section">
+                    <h3 class="section-subtitle" style="color: #ff0000;">Envíanos un Mensaje Directo</h3>
+                  <form name="contacto-final" method="POST" data-netlify="true" action="/gracias.html" class="contact-form">
+    
+    <input type="hidden" name="form-name" value="contacto-final" />
+
+    <input type="hidden" name="_next" value="/gracias.html" /> 
+    
+    
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo <span style="color: #ff0000;">*</span></label>
+                            <input type="text" id="nombre" name="Nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico <span style="color: #ff0000;">*</span></label>
+                            <input type="email" id="email" name="Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="asunto">Asunto <span style="color: #ff0000;">*</span></label>
+                            <select id="asunto" name="Asunto" required>
+                                <option value="">Seleccione el motivo de su consulta...</option>
+                                <option value="Admisiones">Consulta sobre Admisiones/Inscripción</option>
+                                <option value="Programas">Información de un Programa Específico</option>
+                                <option value="Alianzas">Propuesta de Alianza Empresarial</option>
+                                <option value="General">Consulta General</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje <span style="color: #ff0000;">*</span></label>
+                            <textarea id="mensaje" name="Mensaje" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button" name="submit">
+                            Enviar Mensaje <i class="fas fa-comment-dots"></i>
+                        </button>
+                    <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">* Campos requeridos *</p>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+        
+        <form name="contacto-final" netlify hidden>
+          <input type="text" name="name" />
+        </form>
+
+    </main>
+
+
+    <footer>
+        <p>© 2025 CEVAC | Centro Venezolano Alemán de Capacitación. Todos los derechos reservados.</p>
+        <a href="privacidad.html" style="color: #ffce00; text-decoration: underline;">Aviso de Privacidad</a> | 
+        <a href="terminos.html" style="color: #ffce00; text-decoration: underline;">Términos y Condiciones</a>
+        </p>
+    </footer>
+
+    <a href="admisiones.html" class="sticky-cta-btn">
+        <i class="fas fa-user-plus"></i> ¡Postúlate Hoy!
+    </a>
+    
+</body>
+</html>
