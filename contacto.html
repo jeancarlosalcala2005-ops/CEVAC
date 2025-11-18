@@ -109,9 +109,15 @@
                         <input type="hidden" name="replyTo" value="Email" />
                         
                         <div class="form-group">
-                            <label for="nombre">Nombre Completo <span style="color: #ff0000;">*</span></label>
-                            <input type="text" id="nombre" name="Nombre" required>
-                        </div>
+                            <label for="nombre">Nombre Completo (Mín. 3, Máx. 100) <span style="color: #ff0000;">*</span></label>
+                            <input 
+                                type="text" 
+                                id="nombre" 
+                                name="Nombre" 
+                                required
+                                minlength="3" 
+                                maxlength="100" 
+                                title="Mínimo 3 caracteres, Máximo 100."> </div>
                         
                         <div class="form-group">
                             <label for="email">Correo Electrónico <span style="color: #ff0000;">*</span></label>
@@ -119,14 +125,27 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="ci">Cédula de Identidad (CI) <span style="color: #ff0000;">*</span></label>
-                            <input type="text" id="ci" name="CI" required>
-                        </div>
+                            <label for="ci">Cédula de Identidad (7 a 9 dígitos) <span style="color: #ff0000;">*</span></label>
+                            <input 
+                                type="text" 
+                                id="ci" 
+                                name="CI" 
+                                required
+                                pattern="[0-9]{7,9}" 
+                                maxlength="9"
+                                title="Ingrese entre 7 y 9 dígitos numéricos."> </div>
                         
                         <div class="form-group">
-                            <label for="telefono">Número de Teléfono <span style="color: #ff0000;">*</span></label>
-                            <input type="tel" id="telefono" name="Teléfono" required>
-                        </div>
+                            <label for="telefono">Número de Teléfono (7 a 11 dígitos) <span style="color: #ff0000;">*</span></label>
+                            <input 
+                                type="tel" 
+                                id="telefono" 
+                                name="Teléfono" 
+                                required 
+                                pattern="[0-9]{7,11}" 
+                                maxlength="11" 
+                                title="Ingrese entre 7 y 11 dígitos numéricos." 
+                            > </div>
 
                         <div class="form-group">
                             <label for="asunto">Asunto <span style="color: #ff0000;">*</span></label>
@@ -147,9 +166,16 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="mensaje">Mensaje <span style="color: #ff0000;">*</span></label>
-                            <textarea id="mensaje" name="Mensaje" rows="6" required></textarea>
-                        </div>
+                            <label for="mensaje">Mensaje (Mín. 10, Máx. 500) <span style="color: #ff0000;">*</span></label>
+                            <textarea 
+                                id="mensaje" 
+                                name="Mensaje" 
+                                rows="6" 
+                                required
+                                minlength="10" 
+                                maxlength="500" 
+                                title="El mensaje debe contener entre 10 y 500 caracteres.">
+                            </textarea> </div>
                         
                         <button type="submit" class="submit-button" name="submit">
                             Enviar Mensaje <i class="fas fa-comment-dots"></i>
@@ -170,7 +196,10 @@
         </p>
     </footer>
 
-   
+    <a href="admisiones.html" class="sticky-cta-btn">
+        <i class="fas fa-user-plus"></i> ¡Postúlate Hoy!
+    </a>
+    
     <script src="scripts.js"></script>
     
 </body>
