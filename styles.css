@@ -1080,4 +1080,66 @@ footer {
 }
 .input-error:focus {
     box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}/* ======================== */
+/* 13. ESTILOS DE REQUISITOS (GRID DE ÍCONOS) */
+/* ======================== */
+.requirements-section {
+    background: #f7f7f7; /* Un fondo ligeramente gris para destacarlo */
+}
+
+.req-list-grid {
+    display: grid;
+    /* 4 columnas en PC, ajustando automáticamente a 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.req-item {
+    background: white;
+    padding: 30px 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.req-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: #ffce00; /* Borde dorado al pasar el ratón */
+}
+
+.req-icon {
+    font-size: 3rem;
+    color: #ff0000; /* Color rojo */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.req-item h4 {
+    font-size: 1.3rem;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.req-item p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+
+/* Adaptación Responsive para Móviles */
+@media (max-width: 600px) {
+    .req-list-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles muy pequeños */
+        gap: 20px;
+    }
+    .req-item {
+        padding: 20px 15px;
+    }
+    .req-icon {
+        font-size: 2.5rem;
+    }
 }
