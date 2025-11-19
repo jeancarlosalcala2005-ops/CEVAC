@@ -889,9 +889,12 @@ footer {
     .about-text {
         order: 2;
     }
+    /* ->>> CORRECCIÓN DE CENTRADO APLICADA AQUÍ <<<-- */
     .data-block-container {
+        /* CORRECCIÓN: Limita el ancho y centra el bloque de Valores en móvil */
+        max-width: 450px; 
+        margin: 0 auto 30px auto; /* Centra y mantiene el margen inferior */
         order: 1;
-        margin-bottom: 30px;
     }
     
     /* CONTACTO Móvil */
