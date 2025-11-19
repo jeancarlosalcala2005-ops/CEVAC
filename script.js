@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 2. FUNCIONALIDAD DEL CARRUSEL
     // ----------------------------------------------------
     
-    // Función para cambiar de slide
+    // Función para cambiar de slide (Asignada a window.plusSlides para el HTML)
     function plusSlides(n) {
         showSlides(slideIndex += n);
     }
     
-    // Necesario para que los botones con onclick del HTML funcionen
+    // Hacemos la función accesible globalmente para el carrusel en el HTML
     window.plusSlides = plusSlides; 
     
 
@@ -65,4 +65,72 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.carousel-container')) {
         showSlides(slideIndex);
     }
+    
+    
+    // ----------------------------------------------------
+    // 3. VALIDACIÓN DEL FORMULARIO (Se mueve DENTRO de DOMContentLoaded)
+    // ----------------------------------------------------
+    
+    /**
+     * Función para validar el formulario antes de enviarlo.
+     * Si la validación falla, redirige a la página de error.
+     */
+    function validateForm(event) {
+        // 1. Obtener valores
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const ci = document.getElementById('ci').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const mensaje = document.getElementById('mensaje').value.trim();
+        
+        // Bandera para saber si hay errores
+        let hasError = false;
+        
+        // --- 2. Reglas de Validación ---
+        
+        // a) Nombre: Mín. 3, Máx. 100
+        if (nombre.length < 3 || nombre.length > 100) {
+            hasError = true;
+        }
+
+        // b) Correo Electrónico: Formato @
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+        if (!emailPattern.test(email)) {
+            hasError = true;
+        }
+        
+        // c) Cédula de Identidad: Solo números, 7-9 dígitos
+        const ciPattern = /^[0-9]{7,9}$/;
+        if (!ciPattern.test(ci)) {
+            hasError = true;
+        }
+
+        // d) Número de Teléfono: Solo números, 7-11 dígitos
+        const telefonoPattern = /^[0-9]{7,11}$/;
+        if (!telefonoPattern.test(telefono)) {
+            hasError = true;
+        }
+
+        // e) Mensaje: Mín. 10, Máx. 500
+        if (mensaje.length < 10 || mensaje.length > 500) {
+            hasError = true;
+        }
+        
+        // --- 3. Resultado de la Validación ---
+
+        if (hasError) {
+            event.preventDefault(); // Prevenir el envío
+            
+            // 🛑 Redirección manual a tu página de error personalizada
+            window.location.href = 'https://jeancarlosalcala2005-ops.github.io/CEVAC/error.html';
+            
+            return false;
+        }
+        
+        return true; 
+    }
+    
+    // 🛑 HACEMOS LA FUNCIÓN ACCESIBLE GLOBALMENTE para el formulario en el HTML
+    window.validateForm = validateForm;
+
 });
