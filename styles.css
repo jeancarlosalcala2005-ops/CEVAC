@@ -104,7 +104,6 @@ header {
 .logo-subtext { font-size: 0.9rem; opacity: 0.9; }
 
 .menu-toggle {
-    /* display: none; <-- Se mueve a la media query */
     background: none;
     border: none;
     color: white;
@@ -796,6 +795,16 @@ footer {
 /* 11. RESPONSIVE DESIGN (Móviles y Tablets) */
 /* ======================== */
 @media (max-width: 992px) {
+    /* 🛑 CORRECCIÓN DE ESPACIADO EN HEADER PARA EVITAR BORDES PEGADOS */
+    header {
+        padding: 1rem 1rem; 
+    }
+    
+    .nav-container {
+        justify-content: space-between;
+        padding: 0; /* Asegura que no haya padding doble */
+    }
+    
     /* HEADER Móvil */
     .nav-links {
         display: none; /* Oculto por defecto en móvil */
@@ -837,10 +846,6 @@ footer {
         display: flex; 
     }
 
-    .nav-container {
-        justify-content: space-between;
-    }
-    
     /* Adaptación de Secciones */
     .about-content {
         grid-template-columns: 1fr; /* Columna única */
@@ -885,6 +890,75 @@ footer {
     /* Padding y Márgenes generales */
     .about, .programs, .partners, .admissions, .news {
         padding: 3rem 1rem;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* 11b. PANTALLAS PEQUEÑAS (Smartphones < 600px) */
+/* ---------------------------------------------------- */
+@media (max-width: 600px) {
+    /* 1. Base y Títulos */
+    .section-title {
+        font-size: 2rem; /* Reducir aún más el tamaño del título principal */
+        margin-bottom: 2rem;
+    }
+    .section-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    /* Ajuste de padding en secciones para aprovechar el ancho */
+    .about, .programs, .partners, .admissions, .news {
+        padding: 2rem 0.5rem; 
+    }
+
+    /* 2. Header y Logo */
+    .logo-img { height: 40px; } /* Encoger un poco el logo */
+    .logo-text { font-size: 1.2rem; }
+    .logo-subtext { 
+        display: none; /* Ocultar el subtexto para ahorrar espacio horizontal */
+    }
+    .nav-container {
+         padding: 0 0.5rem; /* Ajustar el padding del contenedor de la navegación */
+    }
+    
+    /* 3. Carrusel (Hero Section) */
+    .carousel-container {
+        height: 350px; /* Altura más compacta en móviles pequeños */
+    }
+    .slide-content h2 { 
+        font-size: 1.5rem; /* Título de la diapositiva más pequeño */
+        margin-bottom: 0.2rem;
+    }
+    .slide-content p { 
+        font-size: 1rem; 
+        margin-bottom: 1rem;
+    }
+    .slide-cta {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    .carousel-btn {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* 4. Grids y Tarjetas */
+    .programs-grid {
+        /* Fuerza una mejor adaptación de las tarjetas */
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    .about-content, .contact-grid {
+        gap: 20px;
+    }
+
+    /* 5. CTA Flotante (ajuste de tamaño y posición) */
+    .sticky-cta-btn {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        z-index: 999; 
     }
 }
 
