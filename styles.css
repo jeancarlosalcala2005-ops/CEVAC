@@ -2,6 +2,7 @@
  * ----------------------------------------------------
  * Hoja de Estilos Principal (styles.css) - Proyecto CEVAC
  * Paleta de Colores: Negro (#000000), Rojo (#ff0000), Dorado (#ffce00)
+ * VERSION FINAL CON CORRECCIONES RESPONSIVAS
  * ----------------------------------------------------
  */
 
@@ -250,7 +251,8 @@ header.scrolled .menu-toggle { color: #000; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.5); /* Oscurece la imagen */
+    /* 🛑 FIX CRÍTICO: Oscurece más la imagen para el contraste */
+    filter: brightness(0.4); 
 }
 /* ... (el resto de reglas de slide-content, slide-cta y botones del carrusel se mantienen igual) ... */
 .slide-content {
@@ -267,13 +269,15 @@ header.scrolled .menu-toggle { color: #000; }
     font-size: 3rem;
     margin-bottom: 0.5rem;
     color: #ffce00; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* 🛑 FIX CRÍTICO: Sombra fuerte para legibilidad */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 1), 0 0 5px rgba(0, 0, 0, 0.8);
 }
 
 .slide-content p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    /* 🛑 FIX CRÍTICO: Sombra fuerte para legibilidad */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 1), 0 0 4px rgba(0, 0, 0, 0.8);
 }
 
 .slide-cta {
@@ -316,7 +320,7 @@ header.scrolled .menu-toggle { color: #000; }
 /* ======================== */
 /* 5. SECCIONES Y GRIDS BASE */
 /* ======================== */
-.about, .programs, .partners, .admissions, .news, .program-detail-section {
+.about, .programs, .partners, .admissions, .news, .program-detail-section, .contact-section, .gallery {
     padding: 5rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -919,58 +923,58 @@ footer {
     .slide-content p { font-size: 1.2rem; }
     
     /* Padding y Márgenes generales */
-    .about, .programs, .partners, .admissions, .news {
+    .about, .programs, .partners, .admissions, .news, .contact-section, .gallery {
         padding: 3rem 1rem;
     }
 }
 
 /* ---------------------------------------------------- */
-/* 11b. PANTALLAS PEQUEÑAS (Smartphones < 600px) */
+/* 11b. PANTALLAS PEQUEÑAS (Smartphones < 600px) - CORRECCIONES AGRESIVAS */
 /* ---------------------------------------------------- */
 @media (max-width: 600px) {
     /* 1. Base y Títulos */
     .section-title {
-        font-size: 2rem; /* Reducir aún más el tamaño del título principal */
-        margin-bottom: 2rem;
+        font-size: 1.8rem; /* Reducir aún más el tamaño del título principal */
+        margin-bottom: 1.5rem;
     }
     .section-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.2rem; /* Títulos secundarios más pequeños */
     }
     
     /* Ajuste de padding en secciones para aprovechar el ancho */
-    .about, .programs, .partners, .admissions, .news, .program-detail-section {
-        padding: 2rem 0.5rem; 
+    .about, .programs, .partners, .admissions, .news, .program-detail-section, .contact-section, .gallery {
+        padding: 1.5rem 0.5rem; 
     }
 
     /* 2. Header y Logo */
-    .logo-img { height: 40px; } /* Encoger un poco el logo */
-    .logo-text { font-size: 1.2rem; }
+    .logo-img { height: 35px; } /* Encoger más el logo */
+    .logo-text { font-size: 1.1rem; }
     .logo-subtext { 
         display: none; /* Ocultar el subtexto para ahorrar espacio horizontal */
     }
     .nav-container {
-         padding: 0 0.5rem; /* Ajustar el padding del contenedor de la navegación */
+        padding: 0 0.5rem; /* Ajustar el padding del contenedor de la navegación */
     }
     
     /* 3. Carrusel (Hero Section) */
     .carousel-container {
-        height: 350px; /* Altura más compacta en móviles pequeños */
+        height: 300px; /* Altura más compacta en móviles pequeños */
     }
     .slide-content h2 { 
-        font-size: 1.5rem; /* Título de la diapositiva más pequeño */
+        font-size: 1.4rem; /* Título de la diapositiva más pequeño */
         margin-bottom: 0.2rem;
     }
     .slide-content p { 
-        font-size: 1rem; 
-        margin-bottom: 1rem;
+        font-size: 0.9rem; /* Párrafo más pequeño */
+        margin-bottom: 0.8rem;
     }
     .slide-cta {
-        padding: 10px 20px;
-        font-size: 1rem;
+        padding: 8px 15px;
+        font-size: 0.9rem;
     }
     .carousel-btn {
-        font-size: 16px;
-        padding: 10px;
+        font-size: 14px;
+        padding: 8px;
     }
     
     /* 🛑 4. FIX: Detalles de Programa (Secretario Administrativo Card) */
@@ -988,37 +992,67 @@ footer {
     .program-detail-card h1 {
         font-size: 1.8rem; /* Reducir el título principal del programa */
     }
-
-    .section-subtitle { /* Para "Detalles Clave:" */
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-    }
     
     /* 5. Grids y Tarjetas */
     .programs-grid {
-        /* Fuerza una mejor adaptación de las tarjetas */
-        grid-template-columns: 1fr; 
-        gap: 20px;
+        grid-template-columns: 1fr; /* Columna única para la lista de programas */
+        gap: 15px;
     }
     .about-content, .contact-grid {
-        gap: 20px;
+        gap: 15px;
     }
 
-    /* 6. CTA Flotante (ajuste de tamaño y posición) */
+    /* 🛑 6. FIX: Ajustes de Tarjetas de Programa */
+    .program-card {
+        padding: 20px 10px;
+    }
+    .program-icon {
+        font-size: 2.5rem; /* Ícono de tarjeta más pequeño */
+        margin-bottom: 10px;
+    }
+    .program-card h3 {
+        font-size: 1.2rem;
+    }
+    .program-card .cta-button {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+        margin-top: 15px;
+    }
+
+    /* 🛑 7. FIX: Estilos de Contacto/Pasos de Admisiones */
+    .contact-item {
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+    }
+    .contact-icon {
+        font-size: 1.2rem;
+        min-width: 20px;
+    }
+    .contact-item p {
+        font-size: 0.95rem;
+    }
+
+    .step {
+        padding: 15px;
+    }
+    .step h4 {
+        font-size: 1.2rem;
+    }
+
+    /* 🛑 8. FIX: CTA Flotante (ajuste de tamaño y posición) */
     .sticky-cta-btn {
         bottom: 10px;
         right: 10px;
         padding: 10px 20px;
         font-size: 1rem;
-        z-index: 999; 
     }
     
-    /* 🛑 7. FIX: Footer Móvil */
+    /* 🛑 9. FIX: Footer Móvil */
     footer {
-        padding: 1.5rem 0.5rem; /* Ajustar padding lateral del footer */
+        padding: 1rem 0.5rem; /* Ajustar padding lateral del footer */
     }
     .copyright {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 }
 
