@@ -316,11 +316,42 @@ header.scrolled .menu-toggle { color: #000; }
 /* ======================== */
 /* 5. SECCIONES Y GRIDS BASE */
 /* ======================== */
-.about, .programs, .partners, .admissions, .news {
+.about, .programs, .partners, .admissions, .news, .program-detail-section {
     padding: 5rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* --- ESTILOS PARA LA TARJETA DE DETALLE DEL PROGRAMA --- */
+.program-detail-section {
+    padding-top: 7rem; /* Espacio extra para el header fijo */
+    text-align: center;
+}
+.program-detail-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+.program-detail-icon {
+    font-size: 7rem; /* Tamaño grande para desktop */
+    color: #ff0000;
+    margin-bottom: 10px;
+    display: block;
+}
+.program-detail-card h1 {
+    font-size: 2.8rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+.program-detail-card p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+/* -------------------------------------------------------- */
 
 
 .programs { background: #f1f3f4; }
@@ -907,7 +938,7 @@ footer {
     }
     
     /* Ajuste de padding en secciones para aprovechar el ancho */
-    .about, .programs, .partners, .admissions, .news {
+    .about, .programs, .partners, .admissions, .news, .program-detail-section {
         padding: 2rem 0.5rem; 
     }
 
@@ -941,8 +972,29 @@ footer {
         font-size: 16px;
         padding: 10px;
     }
+    
+    /* 🛑 4. FIX: Detalles de Programa (Secretario Administrativo Card) */
+    .program-detail-section {
+        padding-top: 5rem; /* Menos espacio superior en móvil */
+    }
+    .program-detail-card {
+        padding: 20px 15px; /* Menor padding dentro de la tarjeta */
+    }
+    .program-detail-icon { 
+        font-size: 4rem; /* Reducir el ícono del puño */
+        margin-bottom: 5px;
+    }
 
-    /* 4. Grids y Tarjetas */
+    .program-detail-card h1 {
+        font-size: 1.8rem; /* Reducir el título principal del programa */
+    }
+
+    .section-subtitle { /* Para "Detalles Clave:" */
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* 5. Grids y Tarjetas */
     .programs-grid {
         /* Fuerza una mejor adaptación de las tarjetas */
         grid-template-columns: 1fr; 
@@ -952,13 +1004,21 @@ footer {
         gap: 20px;
     }
 
-    /* 5. CTA Flotante (ajuste de tamaño y posición) */
+    /* 6. CTA Flotante (ajuste de tamaño y posición) */
     .sticky-cta-btn {
         bottom: 10px;
         right: 10px;
         padding: 10px 20px;
         font-size: 1rem;
         z-index: 999; 
+    }
+    
+    /* 🛑 7. FIX: Footer Móvil */
+    footer {
+        padding: 1.5rem 0.5rem; /* Ajustar padding lateral del footer */
+    }
+    .copyright {
+        font-size: 0.8rem;
     }
 }
 
