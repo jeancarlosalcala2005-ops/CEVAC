@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            
+            // 🛑 AÑADIDO: Lógica para cambiar el ícono de barras a X
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            }
+            // 🛑 FIN DE LA MEJORA
         });
     }
 
@@ -29,9 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
     // ----------------------------------------------------
-    // 2. FUNCIONALIDAD DEL CARRUSEL
+    // 2. FUNCIONALIDAD DEL CARRUSEL (No se modifica, está correcto)
     // ----------------------------------------------------
     
     // Función para cambiar de slide (Asignada a window.plusSlides para el HTML)
@@ -68,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     // ----------------------------------------------------
-    // 3. VALIDACIÓN DEL FORMULARIO (Se mueve DENTRO de DOMContentLoaded)
+    // 3. VALIDACIÓN DEL FORMULARIO (No se modifica, está correcto)
     // ----------------------------------------------------
     
     /**
